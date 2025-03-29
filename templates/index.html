@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Change superhenryman's wallpaper</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Wallpaper Changer</h1>
+        <div class="whatisthis">
+            <p>Simple. You upload a file, and my wallpaper changes. That's it.</p>
+        </div>
+        <div class="form">
+            <form id="FileUploadForm">
+                <p>Please place your image here: </p>
+                <input id="fileInput" type="file" accept=".jpg, .jpeg, .png, .pdf"><br>
+                <button type="submit">Change my wallpaper</button>
+            </form>
+        </div>
+        <div id="imglbl"></div>
+        <div id="imagePreview"></div>
+        <div id="result">
+            <!--Am I done? can I finally finish?-->
+            
+        </div>
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+</html>
