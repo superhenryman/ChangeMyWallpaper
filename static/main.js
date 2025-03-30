@@ -2,6 +2,12 @@ const form = document.getElementById("FileUploadForm");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const fileInput = document.getElementById("fileInput");
+    
+    if (!fileInput.files.length) {
+        alert("Please select a file before submitting.");
+        return;
+    }
     try {
         const formData = new FormData(e.target);
         const response = await fetch("/submit", {
@@ -39,7 +45,7 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
         };
         reader.readAsDataURL(file);
         const text = document.createElement('p');
-        text.text = "Your image: ";
+        text.innerText = "Your image: ";
         text.style.maxWidth = "100%";
         text.style.height = "auto";
         const lbl = document.getElementById('imglbl');
