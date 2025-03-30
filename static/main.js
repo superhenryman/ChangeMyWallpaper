@@ -1,10 +1,10 @@
 const form = document.getElementById("FileUploadForm");
 
-form.addEventListener("/submit", async (e) => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
     try {
         const formData = new FormData(e.target);
-        const response = await fetch("/upload", {
+        const response = await fetch("/submit", {
             method: "POST",
             // BIG OL' RED ONES!
             body: formData
