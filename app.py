@@ -25,6 +25,15 @@ def serve_wallpaper():
         print("Attempted to send file which doesn't exist")
         return jsonify({"msg": "File not found", "code": 404}), 404
 
+
+@app.route("/delete")
+def delete():
+    wallpaper_path = os.path.join(UPLOAD_FOLDER, "wallpaper.png")
+    if os.path.exists(wallpaper_path):
+        os.remove(wallpaper_path)
+    else:
+        print("Attempted to delete file which doesn't exist.")
+        return jsonify({"msg": "File not found", "code": 404}), 404
 @app.route("/submit", methods=["POST"])
 def main():
     wallpaper_path = os.path.join(UPLOAD_FOLDER, "wallpaper.png")
